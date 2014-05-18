@@ -34,23 +34,31 @@
                     <form action="pagina2.php" method="post">
                     <br>
                     
-                    <label class="ss-q-title" for="nombre">* Nombre</label> 
-                    <input type="text" id="nombre" name="nombre"> 
-                    <br>
-                    
-                    <label class="ss-q-title" for="apellido">* Apellido</label> 
-                    <input type="text" id="apellido" name="apellido">
-                    <br>
-                    
-                    <label class="ss-q-title" for="legajo">* Legajo</label> 
-                    <input type="text" id="legajo" name="legajo">
-                    
-                    <br>
-                    <label class="ss-q-title" for="carrera">* Carrera</label> 
-                    <select id="carrera" name="carrera"></select>
-                    
-                    
-                    <br> 
+                    <div class="labels">
+                        <label class="ss-q-title" for="nombre">* Nombre</label> 
+                        <br>
+                        <br>
+                        <br>
+                        <label class="ss-q-title" for="apellido">* Apellido</label>
+                        <br>
+                        <br>
+                        <br>
+                        <label class="ss-q-title" for="legajo">* Legajo</label> 
+                        <br>
+                        <br>
+                        <br>
+                        <label class="ss-q-title" for="carrera">* Carrera</label> 
+					</div>
+                    <div class="inputs">                    
+                        <input type="text" id="nombre" name="nombre"> 
+                        <br>
+                        <input type="text" id="apellido" name="apellido">
+                        <br>
+                        <input type="text" id="legajo" name="legajo">
+                        <br>
+                        <select id="carrera" name="carrera"></select>
+                        <br> 
+                    </div>
                     
                     <input type="hidden" name="pageNumber" value="0"> 
                     
