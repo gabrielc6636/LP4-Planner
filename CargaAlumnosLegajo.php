@@ -16,7 +16,7 @@ if($_GET)
    
 	$lista=array();
 	$contador=0;
-	while($row = mysql_fetch_array($result)){
+	while($row = mysql_fetch_assoc($result)){
 		$lista[$contador]=$row;
 		$contador++;
 	}
