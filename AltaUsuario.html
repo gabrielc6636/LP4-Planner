@@ -11,231 +11,186 @@
 
 <title>Formulario de Alta de Usuarios</title>
 
-<style type="text/css" media="screen">
 
-body{font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:0; margin:0}
-
-#toolbar{background:url("http://public.bay.livefilestore.com/y1png3lGcrhvOxWMZNsU7JA0Pzm4wMFVh6NXYtKxypajfpmJ0MPWKqa4BtDirDC6CfsBkPflzAtuXVsB527-krIxA/banner.png") repeat scroll 0 0 transparent;height:45px;top:0; padding:10px 0 10px 82px; font-size:24px; color:#FFF; font-weight:bold; border:0}
-
-.ss-form-container{width: 350px;background-color: #FFF;border: solid 2px #b7ddf2;background:#ebf4fb;padding: 1em 2em;margin: 20px auto}
-
-.ss-form-heading{ width:350px;font-family:georgia; margin-bottom:20px}
-
-.ss-form-heading h1{font-size:22px;font-weight:bold;margin-bottom:8px;display: block; border-bottom:1px solid #999}
-
-.ss-q-submit{color: #000;}
-
-.ss-form-entry{margin-bottom: 1.5em; display:block; height:30px}
-
-.ss-form label{display:block;font-weight:bold;text-align:left;width:70px;float:left}
-
-.ss-form input{float:left;font-size:12px;padding:4px 2px;border:solid 1px #aacfe4;width:200px;margin:2px 0 20px 10px}
-.ss-form select{float:left;font-size:12px;padding:4px 2px;border:solid 1px #aacfe4;width:150px;margin:2px 0 20px 10px}
-
-.ss-form textarea{width:250px}
-
-.ss-q-short, .ss-q-submit{background:#f7f7f7;border:solid gray 1px;margin:8px;padding:0px 3px; color:#666666; }
-
-.errorbox-good{ width:350px; display:block}
-
-.button{ clear:both;margin-left:150px !important;width:125px !important;height:31px !important;background:#666 url(button.png) no-repeat;text-align:center;line-height:31px;color:#FFF;font-size:11px;font-weight:bold; border:0 !important}
-
-.ss-footer{margin-top:25px}
-
-.ss-powered-by{font-size:10px; text-align:center}
-
-.titulo{margin:20px auto 0 auto;display: block; text-align:center;font-weight:bold; font-family:Georgia, "Times New Roman", Times, serif}
-
-.titulo h1{font-size:32px; display:block}
-
-.titulo h2{font-size:24px; display:block}
-
-</style>
-
+<link href="styles/altausuario.css" rel="stylesheet" type="text/css" />
 </head>
 
 
 
 <body onload="load('carrera')">
+	<img alt="fondo" src="img/bg.png"  id="full-screen-background-image" /> 
 
-<form action="pagina2.php" method="post">
+	
+    
+    <div id="head">
+    	<img src="img/logoplanner_small.png" />
+        
+    </div>
 
-<div class="ss-form-container"> 
+	<div class="ss-form-container"> 
 
-<div class="ss-form-heading"><h1>Alta de Usuario</h1> 
+            <div class="ss-form-heading"><h1>Regístrate</h1> 
+            	<div class="formulario" align="center">
+                    <form action="pagina2.php" method="post">
+                    <br>
+                    
+                    <label class="ss-q-title" for="nombre">* Nombre</label> 
+                    <input type="text" id="nombre" name="nombre"> 
+                    <br>
+                    
+                    <label class="ss-q-title" for="apellido">* Apellido</label> 
+                    <input type="text" id="apellido" name="apellido">
+                    <br>
+                    
+                    <label class="ss-q-title" for="legajo">* Legajo</label> 
+                    <input type="text" id="legajo" name="legajo">
+                    
+                    <br>
+                    <label class="ss-q-title" for="carrera">* Carrera</label> 
+                    <select id="carrera" name="carrera"></select>
+                    
+                    
+                    <br> 
+                    
+                    <input type="hidden" name="pageNumber" value="0"> 
+                    
+                    <input type="hidden" name="backupCache" value=""> 
+                    
+                    <br>
+                    
+                    <input type="submit" name="submit" class="button" value="Registrar">
+                    </form>
+                 </div> 
+            
+            </div>
+            
+            <script type="text/javascript"> 
+            
+                  
+            
+                  (function() {
+            
+            var error = false;
+            
+            var divs = document.getElementById('ss-form').
+            
+            getElementsByTagName('div');
+            
+            for (var j in divs) {
+            
+            if (divs[j].className == 'errorbox-bad') {
+            
+            error = true;
+            
+            divs[j].lastChild.firstChild.lastChild.focus();
+            
+            break;
+            
+            }
+            
+            }
+            
+            if (!error) {
+            
+            for (var i in divs) {
+            
+            if (divs[i].className == 'ss-form-entry' && divs[i].
+            
+            firstChild.className == 'ss-q-title') {
+            
+            divs[i].lastChild.focus();
+            
+            break;
+            
+            }
+            
+            }
+            
+            }
+            
+            })();
+            
+                  </script>
+                  <script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript" src="js/alta.js"></script>
+            <script type="text/javascript">
+            function LimpiarCombo(combo){
+                while(combo.length > 0){
+                    combo.remove(combo.length-1);
+                }
+            }
+            function LlenarCombo(json, combo){
+                combo.options[0] = new Option('Selecciona un Alumno', '');
+                for(var i=0;i<json.length;i++){
+                    combo.options[combo.length] = new Option(json[i].Nombre, json[i].Legajo);
+                }
+            }
+            function LlenarComboRamal(json, combo){
+                combo.options[0] = new Option('Selecciona una Carrera', '');
+                for(var i=0;i<json.length;i++){
+                    combo.options[combo.length] = new Option(json[i].Nombre, json[i].idCarrera);
+                }
+            }
+            function SeleccionandoCombo(combo1, combo2){
+                combo2 = document.getElementById(combo2); //con jquery: $("#"+combo2)[0];
+                LimpiarCombo(combo2);
+                if(combo1.options[combo1.selectedIndex].value != ""){
+                    combo1.disabled = true;
+                    combo2.disabled = true;
+                    $.ajax({
+                        type: 'get',
+                        dataType: 'json',
+                        url: 'CargaAlumnosCarrera.php',
+                        data: {idCarrera: combo1.options[combo1.selectedIndex].value},
+                        success: function(json){
+                            LlenarCombo(json, combo2);
+                            combo1.disabled = false;
+                            combo2.disabled = false;
+                        }
+                    });
+                }
+            }
+            function load(combo){
+                combo1 = document.getElementById(combo); //con jquery: $("#"+combo2)[0];
+                //LimpiarCombo(combo1);
+                //if(combo1.options[combo1.selectedIndex].value != ""){
+                    //combo1.disabled = true;
+                    //combo2.disabled = true;
+                    $.ajax({
+                        type: 'get',
+                        dataType: 'json',
+                        url: 'CargaCarreras.php',
+                        data: {idRamal: ''},
+                        success: function(json){
+                            LlenarComboRamal(json, combo1);
+                            //combo1.disabled = false;
+                            //combo2.disabled = false;
+                        }
+                    });
+                //}
+            }/*
+            function realizarConsulta(comboValor1, comboValor2){
+                combo2 = document.getElementById(comboValor2);
+                combo1 = document.getElementById(comboValor1);	//con jquery: $("#"+combo2)[0];
+                //LimpiarCombo(combo2);
+                if(combo1.options[combo1.selectedIndex].value != ""){
+                    if(combo2.options[combo2.selectedIndex].value != ""){
+                        $.ajax({
+                            type: 'get',
+                            dataType: 'json',
+                            url: 'CargaEstacionesRamal.php',
+                            data: {idRamal: combo1.options[combo1.selectedIndex].value},
+                            success: function(json){
+                                LlenarCombo(json, combo2);
+                            }
+                        });
+                    }
+                }
+            }*/
+            
+            </script>
 
-
-</div> 
-
-
-
-<br> 
-
-
-<div class="errorbox-good"> 
-<div class="ss-item ss-item-required ss-text">
-<div class="ss-form-entry">
-<label class="ss-q-title" for="nombre">* Nombre</label> 
-<input type="text" id="nombre" name="nombre"></div></div></div> 
-
-<div class="errorbox-good"> 
-<div class="ss-item ss-item-required ss-text">
-<div class="ss-form-entry">
-<label class="ss-q-title" for="apellido">* Apellido</label> 
-<input type="text" id="apellido" name="apellido"></div></div></div> 
-
-<div class="errorbox-good"> 
-<div class="ss-item ss-item-required ss-text">
-<div class="ss-form-entry">
-<label class="ss-q-title" for="legajo">* Legajo</label> 
-<input type="text" id="legajo" name="legajo"></div></div></div> 
-
-<div class="errorbox-good"> 
-<div class="ss-item ss-item-required ss-text">
-<div class="ss-form-entry">
-<label class="ss-q-title" for="carrera">* Carrera</label> 
-<select id="carrera" name="carrera"></select></div></div></div> 
-
-
-<br> 
-
-<input type="hidden" name="pageNumber" value="0"> 
-
-<input type="hidden" name="backupCache" value=""> 
-
-<div class="ss-item ss-navigate"><div class="ss-form-entry"> 
-
-<input type="submit" name="submit" class="button" value="Registrar">
-</form>
-
-</div></div>
-
-<script type="text/javascript"> 
-
-      
-
-      (function() {
-
-var error = false;
-
-var divs = document.getElementById('ss-form').
-
-getElementsByTagName('div');
-
-for (var j in divs) {
-
-if (divs[j].className == 'errorbox-bad') {
-
-error = true;
-
-divs[j].lastChild.firstChild.lastChild.focus();
-
-break;
-
-}
-
-}
-
-if (!error) {
-
-for (var i in divs) {
-
-if (divs[i].className == 'ss-form-entry' && divs[i].
-
-firstChild.className == 'ss-q-title') {
-
-divs[i].lastChild.focus();
-
-break;
-
-}
-
-}
-
-}
-
-})();
-
-      </script>
-	  <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/alta.js"></script>
-<script type="text/javascript">
-function LimpiarCombo(combo){
-	while(combo.length > 0){
-		combo.remove(combo.length-1);
-	}
-}
-function LlenarCombo(json, combo){
-	combo.options[0] = new Option('Selecciona un Alumno', '');
-	for(var i=0;i<json.length;i++){
-		combo.options[combo.length] = new Option(json[i].Nombre, json[i].Legajo);
-	}
-}
-function LlenarComboRamal(json, combo){
-	combo.options[0] = new Option('Selecciona una Carrera', '');
-	for(var i=0;i<json.length;i++){
-		combo.options[combo.length] = new Option(json[i].Nombre, json[i].idCarrera);
-	}
-}
-function SeleccionandoCombo(combo1, combo2){
-	combo2 = document.getElementById(combo2); //con jquery: $("#"+combo2)[0];
-	LimpiarCombo(combo2);
-	if(combo1.options[combo1.selectedIndex].value != ""){
-		combo1.disabled = true;
-		combo2.disabled = true;
-		$.ajax({
-			type: 'get',
-			dataType: 'json',
-			url: 'CargaAlumnosCarrera.php',
-			data: {idCarrera: combo1.options[combo1.selectedIndex].value},
-			success: function(json){
-				LlenarCombo(json, combo2);
-				combo1.disabled = false;
-				combo2.disabled = false;
-			}
-		});
-	}
-}
-function load(combo){
-	combo1 = document.getElementById(combo); //con jquery: $("#"+combo2)[0];
-	//LimpiarCombo(combo1);
-	//if(combo1.options[combo1.selectedIndex].value != ""){
-		//combo1.disabled = true;
-		//combo2.disabled = true;
-		$.ajax({
-			type: 'get',
-			dataType: 'json',
-			url: 'CargaCarreras.php',
-			data: {idRamal: ''},
-			success: function(json){
-				LlenarComboRamal(json, combo1);
-				//combo1.disabled = false;
-				//combo2.disabled = false;
-			}
-		});
-	//}
-}/*
-function realizarConsulta(comboValor1, comboValor2){
-	combo2 = document.getElementById(comboValor2);
-	combo1 = document.getElementById(comboValor1);	//con jquery: $("#"+combo2)[0];
-	//LimpiarCombo(combo2);
-	if(combo1.options[combo1.selectedIndex].value != ""){
-		if(combo2.options[combo2.selectedIndex].value != ""){
-			$.ajax({
-				type: 'get',
-				dataType: 'json',
-				url: 'CargaEstacionesRamal.php',
-				data: {idRamal: combo1.options[combo1.selectedIndex].value},
-				success: function(json){
-					LlenarCombo(json, combo2);
-				}
-			});
-		}
-	}
-}*/
-
-</script>
-
-</div></body>
+</div>
+</body>
 
 </html>
