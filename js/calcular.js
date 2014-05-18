@@ -546,7 +546,7 @@
 					data:  {Legajo: id },
 					type: "GET",
 					dataType: "json",
-					url: "CargaAlumnoMaterias.php",
+					url: "CargaAlumnoAprobadas.php",
 					success: function(data){
 						var i = 0;
 						var size = data.length;
@@ -587,7 +587,7 @@
 							var tabla = "<html xmlns='http://www.w3.org/1999/xhtml'><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><title>Materias por Alumno</title><link href='layout01.css' rel='stylesheet' type='text/css' /></head><body>";
 							tabla = tabla + "<table><caption>MATERIAS"; 
 							
-							tabla = tabla + "</caption><thead><tr><th scope='col'>IdMateria</th><th scope='col'>Nombre</th><th scope='col'>IdMateria</th><th scope='col'>Nombre Correlativa</th></tr></thead><tfoot><tr><td colspan='10'>Compiled by Anotame.com.ar</td></tr></tfoot><tbody>";
+							tabla = tabla + "</caption><thead><tr><th scope='col'>IdMateria</th><th scope='col'>Nombre</th><th scope='col'>IdMateria</th><th scope='col'>Nombre Correlativa</th></tr></thead><tfoot><tr><td colspan='10'>Compiled by Academic Planner</td></tr></tfoot><tbody>";
 							
 							//alert(tabla);
 							
@@ -645,10 +645,10 @@
 								*/
 								tabla = tabla+ "<tr class='odd'>";
 														
-								tabla = tabla+ "<th scope='row'>"+data[i].idMaterias+"</th>";
-								tabla = tabla+ "<td>"+data[i].Nombre+"</td>";
-								tabla = tabla+ "<td>"+data[i].idMaterias_Correlativas+"</td>";
-								tabla = tabla+ "<td>"+data[i].NombreCorrelativa+"</td>";
+								tabla = tabla+ "<th scope='row'>"+data[i].idMateria+"</th>";
+								tabla = tabla+ "<td>"+data[i].Nombre_Materia+"</td>";
+								tabla = tabla+ "<td>"+data[i].idMateria_Correlativa+"</td>";
+								tabla = tabla+ "<td>"+data[i].Nombre_Correlativa+"</td>";
 								
 								
 
