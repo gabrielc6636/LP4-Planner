@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "upload"
+AuthUserFile "/home/gabriel2/.htpasswds/public_html/tba/upload/passwd"
+require valid-user
