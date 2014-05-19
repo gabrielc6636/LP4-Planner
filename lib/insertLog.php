@@ -1,7 +1,6 @@
 <?php 
 include_once("DBManager.php");
 ?>
-
 <?
 class claseLog{ 
 
@@ -32,7 +31,7 @@ class claseLog{
 		$result = @mysql_query($query);
 		
 			if (!$result){
-			   echo 'Error get_log';
+			   echo 'Error get_materias_alumno';
 			}else{
 				
 				return $result;
@@ -68,7 +67,7 @@ class claseLog{
 		$result = @mysql_query($query);
 		
 			if (!$result){
-			   echo 'Error get_log';
+			   echo 'Error get_materias_posibles';
 			}else{
 				
 				return $result;
@@ -102,7 +101,7 @@ class claseLog{
 		$result = @mysql_query($query);
 		
 			if (!$result){
-			   echo 'Error get_log';
+			   echo 'Error get_materias_aprobadas';
 			}else{
 				
 				return $result;
@@ -244,7 +243,7 @@ and c.idCarrera = ".$idCarrera." order by 2";
 		$result = @mysql_query($query);
 		
 			if (!$result){
-			   echo 'Error get_estacion_ramal';
+			   echo 'Error get_alumnos_carrera';
 			}else{
 				
 				return $result;
@@ -268,7 +267,7 @@ and c.idCarrera = ".$idCarrera." order by 2";
 		$result = @mysql_query($query);
 		
 			if (!$result){
-			   echo 'Error get_estacion_ramal';
+			   echo 'Error get_materias_carrera';
 			}else{
 				
 				return $result;
@@ -289,7 +288,26 @@ and c.idCarrera = ".$idCarrera." order by 2";
 		$result = @mysql_query($query);
 		
 			if (!$result){
-			   echo 'Error get_estacion_ramal';
+			   echo 'Error get_alumnos_legajo';
+			}else{
+				
+				return $result;
+			}
+		}
+	}
+	
+	function get_alumnos_legajodni($Legajo,$Dni){
+	   $con = new DBManager;
+	   if($con->conectar()==true){
+		
+		$query = "select Legajo,DNI,Apellido,Nombre from Alumno where Legajo = ".$Legajo." and DNI = ".$Dni." order by 2";
+		
+		
+		
+		$result = @mysql_query($query);
+		
+			if (!$result){
+			   echo 'Error get_alumnos_legajodni';
 			}else{
 				
 				return $result;

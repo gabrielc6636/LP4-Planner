@@ -1,0 +1,23 @@
+/* big */
+
+body {
+  background-image: none;
+  background-color: #ffffff;
+  font-size: 100%;
+}
+
+#menu, #breadcrumb, #footer {
+  font-size: 100%;
+}
+
+#menu div {
+  margin-bottom: 20px;
+}
+
+#navigation li.selected, #utilities li.selected {
+  list-style-type: square;
+}
+
+#content {
+  margin-right: 20px;
+}
