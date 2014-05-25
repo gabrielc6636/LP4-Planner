@@ -30,44 +30,48 @@
 
 	<div class="ss-form-container"> 
 
-            <div class="ss-form-heading"><h1>Regístrate</h1> 
+            <div class="ss-form-heading">
+            	<h1>Regístrate</h1> 
+            	<p align="justify">Comienza a utilizar Academic Planner, solo tienes que completar los siguientes datos para registrarte.</p>
             	<div class="formulario" align="center">
                     <form action="pagina2.php" method="post">
                     <br>
-                    
+     
                     <div class="labels">
-                        <label class="ss-q-title" for="nombre">* Nombre</label> 
-                        <br>
-                        <br>
-                        <br>
-                        <label class="ss-q-title" for="apellido">* Apellido</label>
-                        <br>
-                        <br>
-                        <br>
-                        <label class="ss-q-title" for="legajo">* Legajo</label> 
-                        <br>
-                        <br>
-                        <br>
-                        <label class="ss-q-title" for="carrera">* Carrera</label> 
-					</div>
-                    <div class="inputs">                    
-                        <input type="text" id="nombre" name="nombre"> 
-                        <br>
+                        <label class="ss-q-title" for="nombre" style="float:left">* Nombre</label> 
+                       	<input type="text" id="nombre" name="nombre">
+                    </div> 
+                    <br />
+                    <div class="labels">    
+                        <label class="ss-q-title" for="apellido" style="float:left">* Apellido</label>
                         <input type="text" id="apellido" name="apellido">
-                        <br>
+                    </div>  
+                    <br />  
+                    <div class="labels">    
+                        <label class="ss-q-title" for="legajo" style="float:left">* Legajo</label> 
                         <input type="text" id="legajo" name="legajo">
-                        <br>
-                        <select id="carrera" name="carrera"></select>
-                        <br> 
                     </div>
-                    
+                    <br />    
+                    <div class="labels">    
+                        <label class="ss-q-title" for="Contraseña" style="float:left">* DNI</label> 
+                        <input type="text" id="password" name="password">
+                    </div>
+                    <br /> 
+                    <div class="labels">    
+                        <label class="ss-q-title" for="carrera" style="float:left">* Carrera</label> 
+                        <select id="carrera" name="carrera"></select>
+					</div>
+                    <div style="clear:both">
+                    </div>
+                    <br />
+                    <hr />
                     <input type="hidden" name="pageNumber" value="0"> 
                     
                     <input type="hidden" name="backupCache" value=""> 
                     
                     <br>
                     
-                    <input type="submit" name="submit" class="button" value="Registrar">
+                    <input type="submit" name="submit" class="registrar" value="Registrar">
                     </form>
                  </div> 
             
