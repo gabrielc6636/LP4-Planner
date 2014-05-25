@@ -1,37 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-html, body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-#full-screen-background-image {
-  z-index: -999;
-  min-height: 100%;
-  min-width: 900px;
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-
-#head{
-	width: 900px;
-	background-color: #000;
-	background:#2d2828;
-	padding: 1em 2em;
-	margin: 20px auto; 
-	border-radius:10px;
-}
-
-#toolbar{background:url("http://public.bay.livefilestore.com/y1png3lGcrhvOxWMZNsU7JA0Pzm4wMFVh6NXYtKxypajfpmJ0MPWKqa4BtDirDC6CfsBkPflzAtuXVsB527-krIxA/banner.png") repeat scroll 0 0 transparent;height:45px;top:0; padding:10px 0 10px 82px; font-size:24px; color:#FFF; font-weight:bold; border:0}
-
-.ss-form-container{width: 900px;background-color: #FFF;background:#ebf4fb;padding: 1em 2em;margin: 20px auto; border-radius:10px}
 
 .ss-form-heading{ font-family:Calibri; margin-bottom:20px}
 
@@ -174,4 +143,75 @@ input:active {
 .registrar{
 	float: left;
 	padding-left: 100px;
+}
+
+#progreso{
+	position:relative;
+	left:50%;
+	width:400px;
+	height:150px;
+	margin-left:-200px;
+	-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+-moz-box-shadow: 0px 0px 1px #000000;
+-webkit-box-shadow: 0px 0px 1px #000000;
+box-shadow: 0px 0px 1px #000000;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#fffdfc', endColorstr = '#c4c4c2');
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#fffdfc', endColorstr = '#c4c4c2')";
+background-image: -moz-linear-gradient(top, #fffdfc, #c4c4c2);
+background-image: -ms-linear-gradient(top, #fffdfc, #c4c4c2);
+background-image: -o-linear-gradient(top, #fffdfc, #c4c4c2);
+background-image: -webkit-gradient(linear, center top, center bottom, from(#fffdfc), to(#c4c4c2));
+background-image: -webkit-linear-gradient(top, #fffdfc, #c4c4c2);
+background-image: linear-gradient(top, #fffdfc, #c4c4c2);
+-moz-background-clip: padding;
+-webkit-background-clip: padding-box;
+background-clip: padding-box;
+
+	padding: 5px;
+	text-transform: uppercase;
+	color: #333;
+	font-weight: bold;	
+}
+
+.progress-bar {
+    background-color: #1a1a1a;
+    height: 25px;
+    padding: 5px;
+    width: 350px;
+    margin: 20px 0;         
+    border-radius: 5px;
+    box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;   
+	        
+}
+
+.progress-bar span {
+	display: inline-block;
+	height: 100%;
+	border-radius: 3px;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+	transition: width .4s ease-in-out;
+	position:relative;
+	float:left;
+	
+}
+.green span {
+      background-color: #00CC33;
+      background-image: linear-gradient(top, #a5df41, #4ca916);  
+	 
+}
+
+.stripes span {
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                        transparent 75%, transparent);            
+    
+    animation: animate-stripes 3s linear infinite;    
+	         
+}
+
+@keyframes animate-stripes {
+    0% {background-position: 0 0;} 100% {background-position: 60px 0;}
 }

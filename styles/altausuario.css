@@ -1,38 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-html, body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-#full-screen-background-image {
-  z-index: -999;
-  min-height: 100%;
-  min-width: 900px;
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-
-#head{
-	width: 900px;
-	background-color: #000;
-	background:#2d2828;
-	padding: 1em 2em;
-	margin: 20px auto; 
-	border-radius:10px;
-}
-
-#toolbar{background:url("http://public.bay.livefilestore.com/y1png3lGcrhvOxWMZNsU7JA0Pzm4wMFVh6NXYtKxypajfpmJ0MPWKqa4BtDirDC6CfsBkPflzAtuXVsB527-krIxA/banner.png") repeat scroll 0 0 transparent;height:45px;top:0; padding:10px 0 10px 82px; font-size:24px; color:#FFF; font-weight:bold; border:0}
-
-.ss-form-container{width: 900px;background-color: #FFF;background:#ebf4fb;padding: 1em 2em;margin: 20px auto; border-radius:10px}
-
 .ss-form-heading{ font-family:Calibri; margin-bottom:20px}
 
 .ss-form-heading h1{font-size:28px;font-weight:bold;margin-bottom:8px;display: block;color: #333;}
