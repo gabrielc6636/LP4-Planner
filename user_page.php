@@ -28,6 +28,7 @@ $resultado = 'Bienvenido, '.$_SESSION['fname'].' '.$_SESSION['lname'];
 
             <div class="ss-form-heading">
             	<label><?php echo $resultado; ?></label> 
+                <br>
                <div id="progreso" align="center">
                 	<p>Progreso de la Carrera</p>
                     <div>45%</div>
