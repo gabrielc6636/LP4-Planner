@@ -42,11 +42,11 @@ $resultado = 'Bienvenido, '.$_SESSION['fname'].' '.$_SESSION['lname'];
 
                 <div align="center">
                 
-                <form action="MateriasAlumno.html" class="registrar">
+                <form action="user_page_materias.php" class="registrar">
             		<input type="submit" value="Registrar Materias">
                     
             	</form>
-                <form action="nuevoForm.html">
+                <form action="user_page_consulta.php">
                 	<input type="submit" value="Consultar Materias Aprobadas">
                 </form>
                	</div>
