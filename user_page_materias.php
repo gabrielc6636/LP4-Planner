@@ -14,41 +14,61 @@ $legajo = $_SESSION['username'];
 <html> 
 <head> 
 <title>Academic Planner</title> 
-<link href="styles/sesion.css" rel="stylesheet" type="text/css" />
+<link href="styles/estilos_globales.css" rel="stylesheet" type="text/css" />
 </head> 
 <body onload="load('materia')">
 
-<form action="pagina3.php" method="post">
-
-<img alt="fondo" src="img/bg.png"  id="full-screen-background-image" />
+    <img alt="fondo" src="img/bg.png"  id="full-screen-background-image" />
     <div id="head">
-    	<img src="img/logoplanner_small.png" />
+        <img src="img/logoplanner_small.png" />
         
     </div>
-<div class="ss-form-container"> 
-<div class="ss-form-heading"><h1>Alta de Materias</h1>             	<label><?php echo $resultado; ?></label>
-</div> 
+    <div class="ss-form-container"> 
+        <div class="ss-form-heading">
+            <h1>Alta de Materias</h1>             	
+            <label><?php echo $resultado; ?></label>
+        </div> 
+        
+        <form action="pagina3.php" method="post">
+        <br> 
+        <input type="hidden" name="alumno" value="<?php echo $legajo; ?>"> 
+        <div class="errorbox-good"> 
+            <div class="ss-item ss-item-required ss-text">
+                <div class="ss-form-entry">
+                    <label class="ss-q-title" for="materia">* Materia</label> 
+                    <select id="materia" name="materia"></select>
+                </div>
+            </div>
+        </div>  
+        
+        <br> 
+        
+        <input type="hidden" name="pageNumber" value="0"> 
+        
+        <input type="hidden" name="backupCache" value=""> 
+    
+        <div class="ss-item ss-navigate">
+        
+            <div class="ss-form-entry">         
+                <input type="submit" name="submit" class="button" value="Registrar">
+                
+            </div>
+            
+        </div>
+        </form>
+	
+	</div>
+    
+	<div id="footer">
+    	<div style="float:right;margin-top: 10px;">
+        	<p style="margin:0px;color: #CCC;font-size:10px">Disponible en</p>
+        	<img src="img/android.png" />
+        </div>
+    </div>
+    <div id="footer2" align="center" style="color:#CCCCCC;">
+    	<p style="font-size:10px;margin:0;padding-top:8px;">Copyright© 2014 - Todos los derechos reservados a Academic Planner</p>
+    </div>
 
-
-<br> 
-<input type="hidden" name="alumno" value="<?php echo $legajo; ?>"> 
-<div class="errorbox-good"> 
-<div class="ss-item ss-item-required ss-text">
-<div class="ss-form-entry">
-<label class="ss-q-title" for="materia">* Materia</label> 
-<select id="materia" name="materia"></select></div></div></div>  
-
-<br> 
-
-<input type="hidden" name="pageNumber" value="0"> 
-
-<input type="hidden" name="backupCache" value=""> 
-
-<div class="ss-item ss-navigate"><div class="ss-form-entry"> 
-
-<input type="submit" name="submit" class="button" value="Registrar">
-</form>
-</div></div>
 
 <script type="text/javascript"> 
 
@@ -133,5 +153,5 @@ function load(combo){
 
 </script>
 
-</div></body>
+</body>
 </html>
