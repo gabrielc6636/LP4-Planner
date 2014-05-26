@@ -14,6 +14,7 @@ $legajo = $_SESSION['username'];
 <html> 
 <head> 
 <title>Academic Planner</title> 
+<link href="styles/sesion.css" rel="stylesheet" type="text/css" />
 <link href="styles/estilos_globales.css" rel="stylesheet" type="text/css" />
 </head> 
 <body>
