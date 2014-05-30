@@ -1,0 +1,242 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<title>Grilla</title>
+
+
+<link href="styles/grilla.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+
+<body onload="load('carrera')">
+	<img alt="fondo" src="img/bg.png"  id="full-screen-background-image" /> 
+
+	
+    
+    <div id="head">
+    	<img src="img/logoplanner_small.png" />
+        
+    </div>
+
+	<div class="ss-form-container"> 
+
+            <div class="ss-form-heading" align="center">
+            	<div class="CSSTableGenerator" >
+                <table >
+                    <tr>
+                        <td colspan="4">
+                            Materias
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Código Materia
+                        </td>
+                        <td>
+                            Materia
+                        </td>
+                        <td>
+                            Código Correlativa
+                        </td>
+                        <td>
+                            Correlativa
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Row 2
+                        </td>
+                        <td>
+                            Row 2
+                        </td>
+                        <td>
+                            Row 2
+                        </td>
+                        <td>
+                            Row 2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Row 2
+                        </td>
+                        <td>
+                            Row 2
+                        </td>
+                        <td>
+                            Row 2
+                        </td>
+                        <td>
+                            Row 2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Row 3
+                        </td>
+                        <td>
+                            Row 3
+                        </td>
+                        <td>
+                            Row 3
+                        </td>
+                        <td>
+                            Row 3
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+                
+            
+            </div>
+             
+            
+            <script type="text/javascript"> 
+            
+                  
+            
+                  (function() {
+            
+            var error = false;
+            
+            var divs = document.getElementById('ss-form').
+            
+            getElementsByTagName('div');
+            
+            for (var j in divs) {
+            
+            if (divs[j].className == 'errorbox-bad') {
+            
+            error = true;
+            
+            divs[j].lastChild.firstChild.lastChild.focus();
+            
+            break;
+            
+            }
+            
+            }
+            
+            if (!error) {
+            
+            for (var i in divs) {
+            
+            if (divs[i].className == 'ss-form-entry' && divs[i].
+            
+            firstChild.className == 'ss-q-title') {
+            
+            divs[i].lastChild.focus();
+            
+            break;
+            
+            }
+            
+            }
+            
+            }
+            
+            })();
+            
+                  </script>
+                  <script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript" src="js/alta.js"></script>
+            <script type="text/javascript">
+            function LimpiarCombo(combo){
+                while(combo.length > 0){
+                    combo.remove(combo.length-1);
+                }
+            }
+            function LlenarCombo(json, combo){
+                combo.options[0] = new Option('Selecciona un Alumno', '');
+                for(var i=0;i<json.length;i++){
+                    combo.options[combo.length] = new Option(json[i].Nombre, json[i].Legajo);
+                }
+            }
+            function LlenarComboRamal(json, combo){
+                combo.options[0] = new Option('Selecciona una Carrera', '');
+                for(var i=0;i<json.length;i++){
+                    combo.options[combo.length] = new Option(json[i].Nombre, json[i].idCarrera);
+                }
+            }
+            function SeleccionandoCombo(combo1, combo2){
+                combo2 = document.getElementById(combo2); //con jquery: $("#"+combo2)[0];
+                LimpiarCombo(combo2);
+                if(combo1.options[combo1.selectedIndex].value != ""){
+                    combo1.disabled = true;
+                    combo2.disabled = true;
+                    $.ajax({
+                        type: 'get',
+                        dataType: 'json',
+                        url: 'CargaAlumnosCarrera.php',
+                        data: {idCarrera: combo1.options[combo1.selectedIndex].value},
+                        success: function(json){
+                            LlenarCombo(json, combo2);
+                            combo1.disabled = false;
+                            combo2.disabled = false;
+                        }
+                    });
+                }
+            }
+            function load(combo){
+                combo1 = document.getElementById(combo); //con jquery: $("#"+combo2)[0];
+                //LimpiarCombo(combo1);
+                //if(combo1.options[combo1.selectedIndex].value != ""){
+                    //combo1.disabled = true;
+                    //combo2.disabled = true;
+                    $.ajax({
+                        type: 'get',
+                        dataType: 'json',
+                        url: 'CargaCarreras.php',
+                        data: {idRamal: ''},
+                        success: function(json){
+                            LlenarComboRamal(json, combo1);
+                            //combo1.disabled = false;
+                            //combo2.disabled = false;
+                        }
+                    });
+                //}
+            }/*
+            function realizarConsulta(comboValor1, comboValor2){
+                combo2 = document.getElementById(comboValor2);
+                combo1 = document.getElementById(comboValor1);	//con jquery: $("#"+combo2)[0];
+                //LimpiarCombo(combo2);
+                if(combo1.options[combo1.selectedIndex].value != ""){
+                    if(combo2.options[combo2.selectedIndex].value != ""){
+                        $.ajax({
+                            type: 'get',
+                            dataType: 'json',
+                            url: 'CargaEstacionesRamal.php',
+                            data: {idRamal: combo1.options[combo1.selectedIndex].value},
+                            success: function(json){
+                                LlenarCombo(json, combo2);
+                            }
+                        });
+                    }
+                }
+            }*/
+            
+            </script>
+
+	</div>
+    <div id="footer">
+    	<div style="float:right;margin-top: 10px;">
+        	<p style="margin:0px;color: #CCC;font-size:10px">Disponible en</p>
+        	<img src="img/android.png" />
+        </div>
+    </div>
+    <div id="footer2" align="center" style="color:#CCCCCC;">
+    	<p style="font-size:10px;margin:0;padding-top:8px;">Copyright© 2014 - Todos los derechos reservados a Academic Planner</p>
+    </div>
+</body>
+
+</html>
