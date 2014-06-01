@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Academic Planner</title>
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
+<link rel="stylesheet" href="styles/indexlogin.css">
+
+</head>
+<script>
+	function validar_texto(e){
+		tecla = (document.all) ? e.keyCode : e.which;
+	
+		//Tecla de retroceso para borrar, siempre la permite
+		if (tecla==8){
+			return true;
+		}
+			
+		// Patron de entrada, en este caso solo acepta numeros
+		patron =/[0-9]/;
+		
+		tecla_final = String.fromCharCode(tecla);
+		
+		return patron.test(tecla_final);
+	}
+	</script>
+<body>
+	<img alt="fondo" src="img/bg.jpg" id="full-screen-background-image" />
+	<div class="contenedor" ="center">
+    	<div class="info" align="center">
+        	<br>
+        	<img src="img/logoplanner_small_negro.png"/>
+            <br>
+        	<hr   color="#999999" size="2px" width="540px"/>
+            <font color="#666666" size="4"><p align="justify"><b>Academic Planner</b> te ofrece las herramientas para una mejor organización de tu vida académica. Anotá tus materias aprobadas, consultá el estado de tu carrera, planificá tus próximas cursadas, todo esto y mucho más podrás hacer.</p></font>
+            <font color="f05317"><h2>Registráte y disfrutá!</h2></font>
+            <div class="copyright">
+            	<font color="#666666" size="2">Copyright© 2014 - Todos los derechos reservados a Academic Planner</font>
+            </div>
+            <div class="android">
+            	<font color="#666666" size="2">Disponible para</font><br />
+            	<img src="img/android-logo.jpg"/>
+            </div>
+        </div>
+        
+        <div class="login" align="center">
+        		<br>
+                <br>
+       			<h2>Inicie sesión</h2>
+        		<form action="verificar.php" method="post">
+                    <input type="text" name="username" class="username" placeholder="Legajo" onkeypress="return validar_texto(event)">
+                    <input type="password" name="password" class="password" placeholder="Contraseña" onkeypress="return validar_texto(event)">
+                    <input type="submit" name="submit" value="Ingresar" class="button">
+                    <div class="error"><span>+</span></div>
+                </form>
+                <br>
+                <br>
+                <a href="AltaUsuario.html" class="link_nuevo_usuario">Crear un Usuario</a>
+                <br>
+                <br>
+        </div>
+	</div>
+    
+    <script src="assets/js/jquery-1.8.2.min.js"></script>
+        
+        <script src="assets/js/scripts.js"></script>
+</body>
+</html>

@@ -12,7 +12,7 @@
 
         <!-- CSS -->
         <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
-        <link rel="stylesheet" href="assets/css/reset.css">
+     
         
         <link rel="stylesheet" href="assets/css/style.css">
 
@@ -43,26 +43,36 @@
 
     <body>
 		<img alt="fondo" src="assets/img/bg.jpg" id="full-screen-background-image" />
-        <div class="page-container">
-            <h1>Academic Planner</h1>
-            <form action="verificar.php" method="post">
-                <input type="text" name="username" class="username" placeholder="Legajo" onkeypress="return validar_texto(event)">
-                <input type="password" name="password" class="password" placeholder="Contraseña" onkeypress="return validar_texto(event)">
-                <input type="submit" name="submit" value="Ingresar" class="button">
-                <div class="error"><span>+</span></div>
-            </form>
-            <br>
-            <br>
-            <a href="AltaUsuario.html" class="link_nuevo_usuario">Crear un Usuario</a>
-            <br>
-            <br>
-            <div class="connect">
-                <p>
-                    <a class="logoplanner" href=""></a>
-                </p>
+        <div  align="center" class="contenedor">
+            <div class="info">
+                
             </div>
-        </div>
-
+            <div class="login" align="center">
+                <h1>Academic Planner</h1>
+                <form action="verificar.php" method="post">
+                    <input type="text" name="username" class="username" placeholder="Legajo" onkeypress="return validar_texto(event)">
+                    <input type="password" name="password" class="password" placeholder="Contraseña" onkeypress="return validar_texto(event)">
+                    <input type="submit" name="submit" value="Ingresar" class="button">
+                    <div class="error"><span>+</span></div>
+                </form>
+                <br>
+                <br>
+                <a href="AltaUsuario.html" class="link_nuevo_usuario">Crear un Usuario</a>
+                <br>
+                <br>
+    
+                
+                    
+    
+                
+    
+                    <p>
+                        <a href=""><img src="img/login/logoplanner.png" width="120"/ height="114"></a>
+                    </p>
+                
+            </div>
+		</div>
+        
         <!-- Javascript -->
         <script src="assets/js/jquery-1.8.2.min.js"></script>
         
